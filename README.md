@@ -1,4 +1,4 @@
-# Twenty cards to the apocalypse [![Build Status](https://travis-ci.org/TeamApocalyse/TwentyCardsToTheApocalypse.svg)](https://travis-ci.org/TeamApocalyse/TwentyCardsToTheApocalypse)
+# Twenty cards to the apocalypse [![Build Status](https://travis-ci.org/sboigelot/TwentyCardsToTheApocalypse.svg)](https://travis-ci.org/sboigelot/TwentyCardsToTheApocalypse)
 
 [About](#about)  
 [Copyright & Licensing](#copyright--licensing)  

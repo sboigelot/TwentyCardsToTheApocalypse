@@ -13,7 +13,8 @@ public class DataSerializationTest
     {
         var data = new Card
         {
-            Name = "TestCard"
+            Name = "TestCard",
+            DescriptionTextLocalCode = "description"
         };
 
         MemoryStream ms = new MemoryStream();
@@ -29,6 +30,7 @@ public class DataSerializationTest
         var data2 = DataSerializer.Instance.DeSerialize<Card>(ms);
 
         Assert.AreEqual(data.Name, data2.Name);
+        Assert.AreEqual(data2.DescriptionTextLocalCode, "description");
     }
 
     [Test]
@@ -36,9 +38,9 @@ public class DataSerializationTest
     {
         List<Card> data = new List<Card>
         {
-            new Card {Name = "Test1"},
-            new Card {Name = "Test2"},
-            new Card {Name = "Test3"}
+            new Card { Name = "Test1" },
+            new Card { Name = "Test2" },
+            new Card { Name = "Test3" }
         };
 
         MemoryStream ms = new MemoryStream();
@@ -65,9 +67,9 @@ public class DataSerializationTest
             Name = "TestDeck",
             Cards = new List<Card>
             {
-                new Card {Name = "Test1"},
-                new Card {Name = "Test2"},
-                new Card {Name = "Test3"}
+                new Card { Name = "Test1" },
+                new Card { Name = "Test2" },
+                new Card { Name = "Test3" }
             }
         };
 

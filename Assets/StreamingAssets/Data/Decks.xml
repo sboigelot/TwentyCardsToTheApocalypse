@@ -11,24 +11,26 @@
             RightOptionTextLocalCode="">
 
         <LeftEffects>
-          <PrioritizeCardEffect/>
-          <ShuffleCardsCardEffect/>
-          <TriggerCardCardEffect/>
-          <UnlockAchievementEffect/>
-          <UnlockApocalypseEffect/>
-          <UnlockDeckCardEffect/>
+          <CardEffect TurnDelay="0"
+                      HasDialog="true"
+                      DialogSpriteName=""
+                      DialogTextLocalCode=""
+                      TargetName=""
+                      FunctionParam="0"
+                      CardEffectType="ShuffleDeck"/>
+          <CardEffect TurnDelay="1"
+                      HasDialog="false"
+                      DialogSpriteName=""
+                      DialogTextLocalCode=""
+                      TargetName="Politic"
+                      FunctionParam="-5"
+                      CardEffectType="AffectWorldStat"/>
         </LeftEffects>
 
         <RightEffects>
-          <PrioritizeCardEffect/>
-          <ShuffleCardsCardEffect/>
-          <TriggerCardCardEffect/>
-          <UnlockAchievementEffect/>
-          <UnlockApocalypseEffect/>
-          <UnlockDeckCardEffect/>
         </RightEffects>
       </Card>
-      
+
     </Cards>
   </Deck>
   

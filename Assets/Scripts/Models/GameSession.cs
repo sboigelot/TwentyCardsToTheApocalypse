@@ -9,5 +9,11 @@
         public World World { get; set; }
 
         public int TurnToApocalypse { get; set; }
+
+        public Deck MixedDeck { get; set; }
+
+        public Deck DiscardPile { get; set; }
+
+        public Card CurrentCard { get; set; }
     }
 }

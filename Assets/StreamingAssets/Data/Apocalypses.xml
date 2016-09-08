@@ -1,2 +1,50 @@
 <?xml version="1.0" encoding="Windows-1252"?>
-<ArrayOfApocalypse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfApocalypse>
+
+  <Apocalypse Name="Impact"
+              BackgroundSpriteName="">
+
+    <StartupCard>
+      <Card Name="Impact Intro Card"
+            SpriteName="ImpactIntro"
+            DescriptionTextLocalCode="ImpactIntro"
+            LeftOptionTextLocalCode="PartyAndIgnoreApocalypse"
+            RightOptionTextLocalCode="TakleTheApocalypse">
+
+        <LeftEffects>
+          <CardEffect TurnDelay="0"
+                      TargetName="PartyAllTheTime"
+                      CardEffectType="UnlockAchievement"/>
+          <CardEffect TurnDelay="0"
+                      TargetName="Lazyidiocracy"
+                      CardEffectType="UnlockApocalypse"/>
+          <CardEffect TurnDelay="0"
+                      TargetName="Politic"
+                      FunctionParam="-100"
+                      CardEffectType="AffectWorldStat"/>
+        </LeftEffects>
+
+        <RightEffects>
+          <CardEffect TurnDelay="0"
+                      TargetName="Politic"
+                      FunctionParam="+10"
+                      CardEffectType="AffectWorldStat"/>
+          <CardEffect TurnDelay="0"
+                      TargetName="Hope"
+                      FunctionParam="+10"
+                      CardEffectType="AffectWorldStat"/>
+        </RightEffects>
+      </Card>
+    </StartupCard>
+    
+    <StartupWorld>
+
+    </StartupWorld>
+
+    <AvailableDeckNames>
+      <string>Default</string>
+    </AvailableDeckNames>
+
+  </Apocalypse>
+  
+</ArrayOfApocalypse>

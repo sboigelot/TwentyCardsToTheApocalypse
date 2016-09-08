@@ -1,8 +1,7 @@
 ﻿namespace Assets.Scripts
 {
-    public class Singleton<T> where T: new()
+    public class Singleton<T> where T : new()
     {
-
         private static T instance;
 
         public static T Instance
@@ -13,9 +12,14 @@
                 {
                     instance = new T();
                 }
+
                 return instance;
             }
-            set { instance = value; }
+
+            set
+            {
+                instance = value;
+            }
         }
     }
 }

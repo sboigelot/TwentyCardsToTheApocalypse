@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Models;
-using Boo.Lang;
+using System.Collections.Generic;
 
 namespace Assets.Scripts.Managers
 {

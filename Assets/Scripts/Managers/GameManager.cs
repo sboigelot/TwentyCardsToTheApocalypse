@@ -1,13 +1,22 @@
 ﻿using Assets.Scripts.Models;
-using System.Collections.Generic;
-
 namespace Assets.Scripts.Managers
 {
-    public class GameManager
+    public class GameManager : Singleton<GameManager>
     {
-        public PrototypeData Prototypes { get; set; }
+        private static GameManager instance;
 
-        public List<PlayerProfile> PlayerProfiles { get; set; }
+        public static GameManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GameManager();
+                }
+                return instance;
+            }
+            set { instance = value; }
+        }
 
         public GameSession GameSession { get; set; }
     }

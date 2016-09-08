@@ -1,7 +1,9 @@
 ﻿namespace Assets.Scripts.Models.Effects
 {
-    public class TriggerCarCardEffect : CardEffect
+    public class PrioritizeCardEffect : CardEffect
     {
         public string CardName { get; set; }
+
+        public int PriorityChange { get; set; }
     }
 }

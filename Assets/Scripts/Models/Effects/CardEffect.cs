@@ -1,6 +1,6 @@
 namespace Assets.Scripts.Models.Effects
 {
-    public class CardEffect
+    public abstract class CardEffect
     {
         public int TurnDelay { get; set; }
 

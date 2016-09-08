@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ArrayOfDeck>
+  
+  <Deck Name="Default">
+    <Cards>
+
+      <Card Name="Test Card 1"
+            SpriteName=""
+            DescriptionTextLocalCode=""
+            LeftOptionTextLocalCode=""
+            RightOptionTextLocalCode="">
+
+        <LeftEffects>
+          <PrioritizeCardEffect/>
+          <ShuffleCardsCardEffect/>
+          <TriggerCardCardEffect/>
+          <UnlockAchievementEffect/>
+          <UnlockApocalypseEffect/>
+          <UnlockDeckCardEffect/>
+        </LeftEffects>
+
+        <RightEffects>
+          <PrioritizeCardEffect/>
+          <ShuffleCardsCardEffect/>
+          <TriggerCardCardEffect/>
+          <UnlockAchievementEffect/>
+          <UnlockApocalypseEffect/>
+          <UnlockDeckCardEffect/>
+        </RightEffects>
+      </Card>
+      
+    </Cards>
+  </Deck>
+  
+</ArrayOfDeck>

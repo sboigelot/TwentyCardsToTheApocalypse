@@ -7,16 +7,16 @@ namespace Assets.Scripts.Models
 {
     public class Deck
     {
+        public Deck()
+        {
+            Cards = new List<Card>();
+        }
+
         [XmlAttribute]
         public string Name { get; set; }
 
         public List<Card> Cards { get; set; }
-
-        public void Shuffle()
-        {
-            Cards = Cards.OrderBy(c => Random.Range(0f, 1f)).ToList();
-        }
-
+        
         public static Deck Merge(List<Deck> availableDecks)
         {
             Deck deck = new Deck
@@ -30,6 +30,11 @@ namespace Assets.Scripts.Models
             }
 
             return deck;
+        }
+
+        public void Shuffle()
+        {
+            Cards = Cards.OrderBy(c => Random.Range(0f, 1f)).ToList();
         }
     }
 }

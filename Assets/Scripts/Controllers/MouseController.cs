@@ -17,9 +17,9 @@ namespace Assets.Scripts.Controllers
         {
             Vector2 mousePosition = Input.mousePosition;
             float horizontalMousePosition = mousePosition.x;
-            float centerRelatedMouseOffset = horizontalMousePosition - ((float) Screen.width / 2);
+            float centerRelatedMouseOffset = horizontalMousePosition - ((float)Screen.width / 2);
 
-            float absoluteDistanceFrom0To1 = Math.Abs(currentZRotation/20f);
+            float absoluteDistanceFrom0To1 = Math.Abs(currentZRotation / 20f);
             float curvedSpeed = SpeedVariation.Evaluate(absoluteDistanceFrom0To1);
             float rotation = rotationSpeed * Time.deltaTime * curvedSpeed;
 

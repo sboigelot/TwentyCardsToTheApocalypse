@@ -13,27 +13,22 @@ namespace Assets.Scripts.Controllers
         public Text CardDescription;
 
         public Text CardFooter;
-        
-        public static GameController Instance { get; set; }
+
+        public Text TurnCountDown;
 
         public GameController()
         {
             Instance = this;
         }
-
+        
+        public static GameController Instance { get; set; }
+        
         public void Awake()
         {
             PrototypeManager.Instance.LoadPrototypes();
             SaveManager.Instance.LoadProfiles();
             GameManager.Instance.NewGame(PrototypeManager.Instance.Prototypes.Apocalypses.First());
             BindUi();
-        }
-
-        private void BindUi()
-        {
-            var card = GameManager.Instance.GameSession.CurrentCard;
-            CardDescription.text = card.DescriptionTextLocalCode;
-            CardFooter.text = card.Name;
         }
 
         public void ClickLeft()
@@ -48,6 +43,14 @@ namespace Assets.Scripts.Controllers
             Debug.Log("Click Right");
             GameManager.Instance.NextCard();
             BindUi();
+        }
+
+        private void BindUi()
+        {
+            var card = GameManager.Instance.GameSession.CurrentCard;
+            CardDescription.text = card.DescriptionTextLocalCode;
+            CardFooter.text = card.Name;
+            TurnCountDown.text = GameManager.Instance.GameSession.TurnToApocalypse.ToString();
         }
     }
 }

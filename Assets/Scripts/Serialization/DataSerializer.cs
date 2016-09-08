@@ -1,5 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Xml.Serialization;
+using Assets.Scripts.Models;
+using Assets.Scripts.Models.Effects;
 using UnityEngine;
 
 namespace Assets.Scripts.Serialization
@@ -55,15 +58,34 @@ namespace Assets.Scripts.Serialization
 
         public void Serialize<T>(Stream writer, T value) where T : class
         {
-            var serializer = new XmlSerializer(value.GetType());
+            var extraTypes = GetExtraTypes();
+            var serializer = new XmlSerializer(value.GetType(), extraTypes);
             serializer.Serialize(writer, value);
             writer.Flush();
         }
 
         public T DeSerialize<T>(Stream stream) where T : class
         {
-            var serializer = new XmlSerializer(typeof(T));
+            var extraTypes = GetExtraTypes();
+            var serializer = new XmlSerializer(typeof(T), extraTypes);
             return serializer.Deserialize(stream) as T;
+        }
+
+        private Type[] GetExtraTypes()
+        {
+            return new[]
+            {
+                typeof(CardEffect),
+                typeof(CardEffectType),
+                typeof(Apocalypse),
+                typeof(Card),
+                typeof(Deck),
+                typeof(GameSession),
+                typeof(PlayerProfile),
+                typeof(World),
+                typeof(WorldImprovement),
+                typeof(WorldStat),
+            };
         }
     }
 }

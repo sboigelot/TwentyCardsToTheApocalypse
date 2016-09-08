@@ -11,7 +11,7 @@ namespace Assets.Scripts.Managers
         public void NewGame(Apocalypse apocalypse)
         {
             PlayerProfile player = SaveManager.Instance.PlayerProfile;
-            World world = (World) apocalypse.StartupWorld.Clone();
+            World world = (World)apocalypse.StartupWorld.Clone();
 
             GameSession = new GameSession
             {
@@ -46,6 +46,8 @@ namespace Assets.Scripts.Managers
             GameSession.DiscardPile.Cards.Add(newCard);
             GameSession.CurrentCard = newCard;
             GameSession.MixedDeck.Cards.RemoveAt(0);
+
+            GameSession.TurnToApocalypse--;
         }
     }
 }

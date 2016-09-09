@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using System.Xml.Serialization;
+using Assets.Scripts.Managers;
 
 namespace Assets.Scripts.Models.Effects
 {
@@ -29,8 +31,8 @@ namespace Assets.Scripts.Models.Effects
         [XmlAttribute("CardEffectType")]
         public string XmlEffectType
         {
-            get { return Enum.GetName(typeof(CardEffectType), EffectType); }
-            set { EffectType = (CardEffectType)Enum.Parse(typeof(CardEffectType), value); }
+            get { return Enum.GetName(typeof (CardEffectType), EffectType); }
+            set { EffectType = (CardEffectType) Enum.Parse(typeof (CardEffectType), value); }
         }
 
         public CardEffect Clone()
@@ -40,6 +42,7 @@ namespace Assets.Scripts.Models.Effects
                 TurnDelay = TurnDelay,
                 HasDialog = HasDialog,
                 DialogSpriteName = DialogSpriteName,
+                DialogTextLocalCode = DialogTextLocalCode,
                 TargetName = TargetName,
                 FunctionParam = FunctionParam,
                 EffectType = EffectType,
@@ -48,6 +51,36 @@ namespace Assets.Scripts.Models.Effects
 
         public void Trigger()
         {
+            switch (EffectType)
+            {
+                case CardEffectType.AffectWorldStat:
+                    var stat = GameManager.Instance.World.Stats.FirstOrDefault(s => s.Name == TargetName);
+                    if (stat != null)
+                    {
+                        stat.Value += FunctionParam;
+                    }
+                    break;
+
+                case CardEffectType.PrioritizeCard:
+                    // TODO.
+                    break;
+
+                case CardEffectType.ShuffleDeck:
+                    GameManager.Instance.MixedDeck.Shuffle();
+                    break;
+
+                case CardEffectType.UnlockAchievement:
+                    GameManager.Instance.Player.UnlockedAchievementNames.Add(TargetName);
+                    break;
+
+                case CardEffectType.UnlockApocalypse:
+                    GameManager.Instance.Player.UnlockedApocalypseNames.Add(TargetName);
+                    break;
+
+                case CardEffectType.UnlockDeck:
+                    GameManager.Instance.Player.UnlockedDeckNames.Add(TargetName);
+                    break;
+            }
         }
     }
 }

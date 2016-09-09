@@ -63,11 +63,28 @@ namespace Assets.Scripts.Managers
 
             TurnToApocalypse--;
 
-            TriggerEffects();
-            NextCard();
+            if (TriggerEffects())
+            {
+                return;
+            }
+
+            if (World.Stats.Any(s => s.Value <= 0 || s.Value >= 100) || TurnToApocalypse <= 0)
+            {
+                GameOver();
+                return;
+            }
+
+            DrawNextCard();
+            TurnToApocalypse--;
         }
 
-        private void TriggerEffects()
+        private void GameOver()
+        {
+            CurrentCard = Apocalypse.WolrdEndCard;
+            TurnToApocalypse = 0;
+        }
+
+        private bool TriggerEffects()
         {
             foreach (var effect in EffectQueue.ToList())
             {
@@ -75,15 +92,31 @@ namespace Assets.Scripts.Managers
                 {
                     effect.Trigger();
                     EffectQueue.Remove(effect);
+
+                    if (effect.HasDialog)
+                    {
+                        CurrentCard = new Card
+                        {
+                            Name = "EffectDialog",
+                            DescriptionTextLocalCode = effect.DialogTextLocalCode,
+                            SpriteName = effect.DialogSpriteName,
+                            LeftOptionTextLocalCode = "Hem...",
+                            RightOptionTextLocalCode = "What!",
+                        };
+
+                        return true;
+                    }
                 }
                 else
                 {
                     effect.TurnDelay--;
                 }
             }
+
+            return false;
         }
 
-        private void NextCard()
+        private void DrawNextCard()
         {
             if (MixedDeck.Cards.Count == 0)
             {
@@ -96,8 +129,6 @@ namespace Assets.Scripts.Managers
             DiscardPile.Cards.Add(newCard);
             CurrentCard = newCard;
             MixedDeck.Cards.RemoveAt(0);
-
-            TurnToApocalypse--;
         }
     }
 }

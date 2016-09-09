@@ -4,7 +4,13 @@
   <Apocalypse Name="Impact"
               BackgroundSpriteName="">
 
-    <StartupCard Name="Impact Intro Card"
+    <WolrdEndCard Name="ImpactWorldEndCard"
+          SpriteName="ImpactWorldEnd"
+          DescriptionTextLocalCode="ImpactWorldEnd"
+          LeftOptionTextLocalCode="Hem"
+          RightOptionTextLocalCode="What"/>
+    
+    <StartupCard Name="ImpactIntroCard"
           SpriteName="ImpactIntro"
           DescriptionTextLocalCode="ImpactIntro"
           LeftOptionTextLocalCode="PartyAndIgnoreApocalypse"
@@ -12,7 +18,10 @@
 
       <LeftEffect TurnDelay="0"
                   TargetName="PartyAllTheTime"
-                  CardEffectType="UnlockAchievement"/>
+                  CardEffectType="UnlockAchievement"
+                  HasDialog="true"
+                  DialogTextLocalCode="PartyAllTheTimeDialog"
+                  DialogSpriteName="PartyAllTheTime"/>
       <LeftEffect TurnDelay="0"
                   TargetName="Lazyidiocracy"
                   CardEffectType="UnlockApocalypse"/>

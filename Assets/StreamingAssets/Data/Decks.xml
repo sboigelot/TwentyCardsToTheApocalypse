@@ -2,8 +2,26 @@
 <ArrayOfDeck>
   
   <Deck Name="Default">
-    <Card Name="Test Card 1"
-          SpriteName="TestCard1"
+    
+    <!--
+    ideas: Gov Hope Science €
+      OrganizeTopScientistsMeeting -3G +3H +10S -20€ 
+      GiveATvSpeachDenyingEverything -10G +30H / +5G -10H 
+      GatherCrowdIdead -10G +5S
+      RaiseEmergencyTaxes +€ -H -G
+      FundUniversities
+      FundPrivateCompanies
+      BuildABunkerStartChain -> Bunker Improvement
+      BuildAMassiveNuke -> Massive Nuke Improvement
+        - will raise a lot political stability
+        - allow you to bomb enemy country before they bomb you if stability goes down too mucj -> unlock Atomic Apocalypse
+        - may allow you to bomb the asteroid is science get high
+      BuildASpaceMission -> Space Mission Improvement        
+        - may allow you to bomb the asteroid is science & money get high
+    -->
+    
+    <Card Name="CallupTopScientistsMeeting"
+          SpriteName="CallupTopScientistsMeeting"
           DescriptionTextLocalCode="test_card_one_desc"
           LeftOptionTextLocalCode="test_card_one_left"
           RightOptionTextLocalCode="test_card_one_right">

@@ -18,6 +18,7 @@ namespace Assets.Scripts.Localization
         public static string Get(string key)
         {
             if (!Instance.locals.ContainsKey(Instance.CurrentCulture) ||
+                string.IsNullOrEmpty(key) ||
                 !Instance.locals[Instance.CurrentCulture].ContainsKey(key))
             {
                 return string.Format("[{0}][{1}]", Instance.CurrentCulture, key);

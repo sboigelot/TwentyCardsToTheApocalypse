@@ -6,6 +6,13 @@ namespace Assets.Scripts.Models
 {
     public class Card
     {
+
+        public Card()
+        {
+            LeftEffects = new List<CardEffect>();
+            RightEffects = new List<CardEffect>();
+        }
+
         [XmlAttribute]
         public string Name { get; set; }
 

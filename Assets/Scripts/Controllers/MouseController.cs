@@ -1,5 +1,8 @@
 ﻿using System;
+using Assets.Scripts.Localization;
+using Assets.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Controllers
 {
@@ -12,6 +15,8 @@ namespace Assets.Scripts.Controllers
         public float currentZRotation;
 
         public AnimationCurve SpeedVariation;
+
+        public Text ChoiceText;
 
         public void Update()
         {
@@ -40,6 +45,11 @@ namespace Assets.Scripts.Controllers
 
             if (centerRelatedMouseOffset < 50f)
             {
+                if (GameManager.Instance.CurrentCard != null)
+                {
+                    ChoiceText.text = Localizer.Get(GameManager.Instance.CurrentCard.LeftOptionTextLocalCode);
+                }
+
                 currentZRotation = Mathf.Max(-20f, currentZRotation - .1f);
                 if (currentZRotation > -20f)
                 {
@@ -48,6 +58,11 @@ namespace Assets.Scripts.Controllers
             }
             else if (centerRelatedMouseOffset > 50f)
             {
+                if (GameManager.Instance.CurrentCard != null)
+                {
+                    ChoiceText.text = Localizer.Get(GameManager.Instance.CurrentCard.RightOptionTextLocalCode);
+                }
+
                 currentZRotation = Mathf.Min(+20f, currentZRotation + .1f);
                 if (currentZRotation < 20f)
                 {

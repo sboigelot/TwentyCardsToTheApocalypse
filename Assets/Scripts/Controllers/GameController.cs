@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Assets.Scripts.Localization;
 using Assets.Scripts.Managers;
-using Assets.Scripts.Models;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,9 +20,9 @@ namespace Assets.Scripts.Controllers
         {
             Instance = this;
         }
-        
+
         public static GameController Instance { get; set; }
-        
+
         public void Awake()
         {
             PrototypeManager.Instance.LoadPrototypes();
@@ -52,6 +51,7 @@ namespace Assets.Scripts.Controllers
             CardDescription.text = Localizer.Get(card.DescriptionTextLocalCode);
             CardFooter.text = Localizer.Get(card.Name);
             TurnCountDown.text = GameManager.Instance.TurnToApocalypse.ToString();
+            CardDisplay.sprite = SpriteManager.Get(card.SpriteName);
         }
     }
 }

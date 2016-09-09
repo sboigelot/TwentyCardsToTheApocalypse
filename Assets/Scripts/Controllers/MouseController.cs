@@ -30,11 +30,11 @@ namespace Assets.Scripts.Controllers
 
             if (Input.GetMouseButtonUp(0))
             {
-                if (centerRelatedMouseOffset < 50f)
+                if (centerRelatedMouseOffset < -150f)
                 {
                     GameController.Instance.ClickLeft();
                 }
-                else if (centerRelatedMouseOffset > 50f)
+                else if (centerRelatedMouseOffset > 150f)
                 {
                     GameController.Instance.ClickRight();
                 }
@@ -43,7 +43,7 @@ namespace Assets.Scripts.Controllers
                 return;
             }
 
-            if (centerRelatedMouseOffset < 50f)
+            if (centerRelatedMouseOffset < -150f)
             {
                 if (GameManager.Instance.CurrentCard != null)
                 {
@@ -56,7 +56,7 @@ namespace Assets.Scripts.Controllers
                     CardDisplay.Rotate(Vector3.forward, Mathf.Deg2Rad * rotation);
                 }
             }
-            else if (centerRelatedMouseOffset > 50f)
+            else if (centerRelatedMouseOffset > 150f)
             {
                 if (GameManager.Instance.CurrentCard != null)
                 {

@@ -7,10 +7,10 @@ namespace Assets.Scripts.Models
 {
     public class World
     {
-        [XmlElement]
+        [XmlElement("Stat")]
         public List<WorldStat> Stats { get; set; }
 
-        [XmlElement]
+        [XmlElement("Imrpovement")]
         public List<WorldImprovement> Improvements { get; set; }
 
         public object Clone()

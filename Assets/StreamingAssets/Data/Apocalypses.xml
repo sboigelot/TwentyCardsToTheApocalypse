@@ -32,7 +32,26 @@
     </StartupCard>
 
     <StartupWorld>
-
+      <Stat Name="Politic" 
+            SpriteName="stat_politic" 
+            Value="30" 
+            CurrentMaxOutLocalCode="stat_politic_maxout" 
+            CurrentMinOutLocalCode="stat_politic_minout"/>
+      <Stat Name="Hope" 
+            SpriteName="stat_hope" 
+            Value="60" 
+            CurrentMaxOutLocalCode="stat_hope_maxout" 
+            CurrentMinOutLocalCode="stat_hope_minout"/>
+      <Stat Name="Science"
+            SpriteName="stat_science" 
+            Value="25" 
+            CurrentMaxOutLocalCode="stat_science_maxout" 
+            CurrentMinOutLocalCode="stat_science_minout"/>
+      <Stat Name="Money"
+            SpriteName="stat_money"
+            Value="10" 
+            CurrentMaxOutLocalCode="stat_money_maxout" 
+            CurrentMinOutLocalCode="stat_money_minout"/>
     </StartupWorld>
 
     <AvailableDeck>Default</AvailableDeck>

@@ -24,7 +24,7 @@ namespace Assets.Scripts.Models
             return new WorldStat
             {
                 Name = Name,
-                SpriteName = Name,
+                SpriteName = SpriteName,
                 Value = Value,
                 CurrentMaxOutLocalCode = CurrentMaxOutLocalCode,
                 CurrentMinOutLocalCode = CurrentMinOutLocalCode

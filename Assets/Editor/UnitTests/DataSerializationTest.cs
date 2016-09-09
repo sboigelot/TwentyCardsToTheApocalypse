@@ -112,7 +112,7 @@ public class DataSerializationTest
                 <RightEffect TurnDelay='1' HasDialog='false' DialogSpriteName='' DialogTextLocalCode=''
                             TargetName='Politic' FunctionParam='-5' CardEffectType='AffectWorldStat'/>
             </Card>
-        </Deck>  ".Replace("'","\"");
+        </Deck>".Replace("'", "\"");
 
         using (Stream sr = GenerateStreamFromString(xml))
         {

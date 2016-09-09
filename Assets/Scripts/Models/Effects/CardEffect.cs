@@ -29,8 +29,25 @@ namespace Assets.Scripts.Models.Effects
         [XmlAttribute("CardEffectType")]
         public string XmlEffectType
         {
-            get { return Enum.GetName(typeof (CardEffectType), EffectType); }
+            get { return Enum.GetName(typeof(CardEffectType), EffectType); }
             set { EffectType = (CardEffectType)Enum.Parse(typeof(CardEffectType), value); }
+        }
+
+        public CardEffect Clone()
+        {
+            return new CardEffect
+            {
+                TurnDelay = TurnDelay,
+                HasDialog = HasDialog,
+                DialogSpriteName = DialogSpriteName,
+                TargetName = TargetName,
+                FunctionParam = FunctionParam,
+                EffectType = EffectType,
+            };
+        }
+
+        public void Trigger()
+        {
         }
     }
 }

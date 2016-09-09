@@ -1,11 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Models;
+using Assets.Scripts.Models.Effects;
 
 namespace Assets.Scripts.Managers
 {
     public class GameManager : Singleton<GameManager>
     {
+        public GameManager()
+        {
+            EffectQueue = new List<CardEffect>();
+        }
+
         public PlayerProfile Player { get; set; }
 
         public Apocalypse Apocalypse { get; set; }
@@ -19,6 +25,8 @@ namespace Assets.Scripts.Managers
         public Deck DiscardPile { get; set; }
 
         public Card CurrentCard { get; set; }
+
+        public List<CardEffect> EffectQueue { get; set; }
 
         public void NewGame(Apocalypse apocalypse)
         {
@@ -42,7 +50,40 @@ namespace Assets.Scripts.Managers
             MixedDeck.Shuffle();
         }
 
-        public void NextCard()
+        public void EndTurn(bool chooseLeft)
+        {
+            if (chooseLeft)
+            {
+                EffectQueue.AddRange(CurrentCard.LeftEffects.Select(e => e.Clone()));
+            }
+            else
+            {
+                EffectQueue.AddRange(CurrentCard.RightEffects.Select(e => e.Clone()));
+            }
+
+            TurnToApocalypse--;
+
+            TriggerEffects();
+            NextCard();
+        }
+
+        private void TriggerEffects()
+        {
+            foreach (var effect in EffectQueue.ToList())
+            {
+                if (effect.TurnDelay == 0)
+                {
+                    effect.Trigger();
+                    EffectQueue.Remove(effect);
+                }
+                else
+                {
+                    effect.TurnDelay--;
+                }
+            }
+        }
+
+        private void NextCard()
         {
             if (MixedDeck.Cards.Count == 0)
             {

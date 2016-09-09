@@ -3,10 +3,10 @@
   
   <Deck Name="Default">
     <Card Name="Test Card 1"
-          SpriteName=""
-          DescriptionTextLocalCode=""
-          LeftOptionTextLocalCode=""
-          RightOptionTextLocalCode="">
+          SpriteName="TestCard1"
+          DescriptionTextLocalCode="test_card_one_desc"
+          LeftOptionTextLocalCode="test_card_one_left"
+          RightOptionTextLocalCode="test_card_one_right">
         <LeftEffect TurnDelay="0" HasDialog="true" DialogSpriteName="" DialogTextLocalCode=""
                     CardEffectType="ShuffleDeck" TargetName="" FunctionParam="0"/>
         <LeftEffect TurnDelay="1" HasDialog="false" DialogSpriteName="" DialogTextLocalCode=""

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Assets.Scripts.Localization;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Models;
 using UnityEngine;
@@ -34,22 +35,22 @@ namespace Assets.Scripts.Controllers
         public void ClickLeft()
         {
             Debug.Log("Click Left");
-            GameManager.Instance.NextCard();
+            GameManager.Instance.EndTurn(true);
             BindUi();
         }
 
         public void ClickRight()
         {
             Debug.Log("Click Right");
-            GameManager.Instance.NextCard();
+            GameManager.Instance.EndTurn(false);
             BindUi();
         }
 
         private void BindUi()
         {
             var card = GameManager.Instance.CurrentCard;
-            CardDescription.text = card.DescriptionTextLocalCode;
-            CardFooter.text = card.Name;
+            CardDescription.text = Localizer.Get(card.DescriptionTextLocalCode);
+            CardFooter.text = Localizer.Get(card.Name);
             TurnCountDown.text = GameManager.Instance.TurnToApocalypse.ToString();
         }
     }

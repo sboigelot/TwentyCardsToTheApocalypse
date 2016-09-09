@@ -13,10 +13,13 @@ namespace Assets.Scripts.Models
         [XmlAttribute]
         public string BackgroundSpriteName { get; set; }
 
+        [XmlElement("StartupCard")]
         public Card StartupCard { get; set; }
 
+        [XmlElement("StartupWorld")]
         public World StartupWorld { get; set; }
 
+        [XmlElement("AvailableDeck")]
         public List<string> AvailableDeckNames { get; set; }
     }
 }

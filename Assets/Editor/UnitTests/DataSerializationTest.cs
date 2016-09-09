@@ -5,6 +5,7 @@ using System.IO;
 using Assets.Scripts.Models;
 using Assets.Scripts.Serialization;
 using NUnit.Framework;
+using UnityEditor.VersionControl;
 
 public class DataSerializationTest
 {
@@ -87,5 +88,50 @@ public class DataSerializationTest
 
         Assert.AreEqual(data.Name, data2.Name);
         Assert.AreEqual(data.Cards[0].Name, data2.Cards[0].Name);
+    }
+
+    [Test]
+    public void DerializeDeckTest()
+    {
+        string xml =
+        @"<?xml version='1.0' encoding='Windows-1252'?>
+        <Deck Name='Default'>
+            <Card Name='Test Card 1' SpriteName='' DescriptionTextLocalCode='' LeftOptionTextLocalCode='' RightOptionTextLocalCode=''>
+                <LeftEffect TurnDelay='0' HasDialog='true' DialogSpriteName='' DialogTextLocalCode=''
+                            TargetName='' FunctionParam='0' CardEffectType='ShuffleDeck'/>
+                <LeftEffect TurnDelay='1' HasDialog='false' DialogSpriteName='' DialogTextLocalCode=''
+                            TargetName='Politic' FunctionParam='-5' CardEffectType='AffectWorldStat'/>
+                <RightEffect TurnDelay='1' HasDialog='false' DialogSpriteName='' DialogTextLocalCode=''
+                            TargetName='Politic' FunctionParam='-5' CardEffectType='AffectWorldStat'/>
+            </Card>
+            <Card Name='Test Card 2' SpriteName='' DescriptionTextLocalCode='' LeftOptionTextLocalCode='' RightOptionTextLocalCode=''>
+                <LeftEffect TurnDelay='0' HasDialog='true' DialogSpriteName='' DialogTextLocalCode=''
+                            TargetName='' FunctionParam='0' CardEffectType='ShuffleDeck'/>
+                <LeftEffect TurnDelay='1' HasDialog='false' DialogSpriteName='' DialogTextLocalCode=''
+                            TargetName='Politic' FunctionParam='-5' CardEffectType='AffectWorldStat'/>
+                <RightEffect TurnDelay='1' HasDialog='false' DialogSpriteName='' DialogTextLocalCode=''
+                            TargetName='Politic' FunctionParam='-5' CardEffectType='AffectWorldStat'/>
+            </Card>
+        </Deck>  ".Replace("'","\"");
+
+        using (Stream sr = GenerateStreamFromString(xml))
+        {
+            var data2 = DataSerializer.Instance.DeSerialize<Deck>(sr);
+
+            Assert.AreEqual("Default", data2.Name);
+            Assert.AreEqual(2, data2.Cards.Count);
+            Assert.AreEqual(2, data2.Cards[0].LeftEffects.Count);
+            Assert.AreEqual(1, data2.Cards[0].RightEffects.Count);
+        }
+    }
+
+    public Stream GenerateStreamFromString(string s)
+    {
+        MemoryStream stream = new MemoryStream();
+        StreamWriter writer = new StreamWriter(stream);
+        writer.Write(s);
+        writer.Flush();
+        stream.Position = 0;
+        return stream;
     }
 }

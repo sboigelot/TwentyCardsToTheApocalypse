@@ -9,6 +9,6 @@ public class GameplayTest
     {
         PrototypeManager.Instance.LoadPrototypes();
         SaveManager.Instance.LoadProfiles();
-        GameManager.Instance.NewGame(PrototypeManager.Instance.Prototypes.Apocalypses.First());
+        GameManager.Instance.NewGame(PrototypeManager.Instance.Apocalypses.First());
     }
 }

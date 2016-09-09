@@ -2,36 +2,16 @@
 <ArrayOfDeck>
   
   <Deck Name="Default">
-    <Cards>
-
-      <Card Name="Test Card 1"
-            SpriteName=""
-            DescriptionTextLocalCode=""
-            LeftOptionTextLocalCode=""
-            RightOptionTextLocalCode="">
-
-        <LeftEffects>
-          <CardEffect TurnDelay="0"
-                      HasDialog="true"
-                      DialogSpriteName=""
-                      DialogTextLocalCode=""
-                      TargetName=""
-                      FunctionParam="0"
-                      CardEffectType="ShuffleDeck"/>
-          <CardEffect TurnDelay="1"
-                      HasDialog="false"
-                      DialogSpriteName=""
-                      DialogTextLocalCode=""
-                      TargetName="Politic"
-                      FunctionParam="-5"
-                      CardEffectType="AffectWorldStat"/>
-        </LeftEffects>
-
-        <RightEffects>
-        </RightEffects>
-      </Card>
-
-    </Cards>
+    <Card Name="Test Card 1"
+          SpriteName=""
+          DescriptionTextLocalCode=""
+          LeftOptionTextLocalCode=""
+          RightOptionTextLocalCode="">
+        <LeftEffect TurnDelay="0" HasDialog="true" DialogSpriteName="" DialogTextLocalCode=""
+                    CardEffectType="ShuffleDeck" TargetName="" FunctionParam="0"/>
+        <LeftEffect TurnDelay="1" HasDialog="false" DialogSpriteName="" DialogTextLocalCode=""
+                    CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-5"/>
+    </Card>
   </Deck>
   
 </ArrayOfDeck>

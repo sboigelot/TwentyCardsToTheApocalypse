@@ -10,10 +10,13 @@ namespace Assets.Scripts.Models
         [XmlAttribute]
         public string Name { get; set; }
 
+        [XmlElement("UnlockedDeck")]
         public List<string> UnlockedDeckNames { get; set; }
 
+        [XmlElement("UnlockedAchievement")]
         public List<string> UnlockedAchievementNames { get; set; }
 
+        [XmlElement("UnlockedApocalypse")]
         public List<string> UnlockedApocalypseNames { get; set; }
 
         public object Clone()

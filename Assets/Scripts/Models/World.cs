@@ -1,12 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Assets.Scripts.Models
 {
     public class World
     {
+        [XmlElement]
         public List<WorldStat> Stats { get; set; }
 
+        [XmlElement]
         public List<WorldImprovement> Improvements { get; set; }
 
         public object Clone()

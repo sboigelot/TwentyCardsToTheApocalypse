@@ -6,48 +6,57 @@ namespace Assets.Scripts.Managers
 {
     public class GameManager : Singleton<GameManager>
     {
-        public GameSession GameSession { get; set; }
+        public PlayerProfile Player { get; set; }
+
+        public Apocalypse Apocalypse { get; set; }
+
+        public World World { get; set; }
+
+        public int TurnToApocalypse { get; set; }
+
+        public Deck MixedDeck { get; set; }
+
+        public Deck DiscardPile { get; set; }
+
+        public Card CurrentCard { get; set; }
 
         public void NewGame(Apocalypse apocalypse)
         {
             PlayerProfile player = SaveManager.Instance.PlayerProfile;
             World world = (World)apocalypse.StartupWorld.Clone();
 
-            GameSession = new GameSession
-            {
-                Apocalypse = apocalypse,
-                Player = player,
-                TurnToApocalypse = Apocalypse.TurnToEndAllLifeOnEarth,
-                World = world,
-                DiscardPile = new Deck(),
-                CurrentCard = apocalypse.StartupCard
-            };
+            Apocalypse = apocalypse;
+            Player = player;
+            TurnToApocalypse = Apocalypse.TurnToEndAllLifeOnEarth;
+            World = world;
+            DiscardPile = new Deck();
+            CurrentCard = apocalypse.StartupCard;
 
             List<Deck> availableDecks =
-                PrototypeManager.Instance.Prototypes.Decks.Where(
+                PrototypeManager.Instance.Decks.Where(
                     d => player.UnlockedDeckNames.Contains(d.Name) &&
                          apocalypse.AvailableDeckNames.Contains(d.Name))
                     .ToList();
 
-            GameSession.MixedDeck = Deck.Merge(availableDecks);
-            GameSession.MixedDeck.Shuffle();
+            MixedDeck = Deck.Merge(availableDecks);
+            MixedDeck.Shuffle();
         }
 
         public void NextCard()
         {
-            if (GameSession.MixedDeck.Cards.Count == 0)
+            if (MixedDeck.Cards.Count == 0)
             {
-                GameSession.MixedDeck = GameSession.DiscardPile;
-                GameSession.MixedDeck.Shuffle();
-                GameSession.DiscardPile = new Deck();
+                MixedDeck = DiscardPile;
+                MixedDeck.Shuffle();
+                DiscardPile = new Deck();
             }
 
-            var newCard = GameSession.MixedDeck.Cards.First();
-            GameSession.DiscardPile.Cards.Add(newCard);
-            GameSession.CurrentCard = newCard;
-            GameSession.MixedDeck.Cards.RemoveAt(0);
+            var newCard = MixedDeck.Cards.First();
+            DiscardPile.Cards.Add(newCard);
+            CurrentCard = newCard;
+            MixedDeck.Cards.RemoveAt(0);
 
-            GameSession.TurnToApocalypse--;
+            TurnToApocalypse--;
         }
     }
 }

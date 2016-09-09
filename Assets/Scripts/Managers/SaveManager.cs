@@ -13,7 +13,7 @@ namespace Assets.Scripts.Managers
             PlayerProfile = DataSerializer.Instance.LoadFromAppData<PlayerProfile>(string.Empty, "Profile.xml");
             if (PlayerProfile == null)
             {
-                PlayerProfile = (PlayerProfile)PrototypeManager.Instance.Prototypes.PlayerTemplate.Clone();
+                PlayerProfile = (PlayerProfile)PrototypeManager.Instance.PlayerTemplate.Clone();
                 DataSerializer.Instance.SaveToAppData(string.Empty, "Profile.xml", PlayerProfile);
             }
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Xml.Serialization;
 
 namespace Assets.Scripts.Models.Effects
@@ -22,7 +23,14 @@ namespace Assets.Scripts.Models.Effects
         [XmlAttribute]
         public int FunctionParam { get; set; }
 
-        [XmlAttribute]
-        public CardEffectType FunctionName { get; set; }
+        [XmlIgnore]
+        public CardEffectType EffectType { get; set; }
+
+        [XmlAttribute("CardEffectType")]
+        public string XmlEffectType
+        {
+            get { return Enum.GetName(typeof (CardEffectType), EffectType); }
+            set { EffectType = (CardEffectType)Enum.Parse(typeof(CardEffectType), value); }
+        }
     }
 }

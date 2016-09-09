@@ -8,16 +8,17 @@ namespace Assets.Scripts.Managers
 {
     public class PrototypeManager : Singleton<PrototypeManager>
     {
-        public PrototypeData Prototypes { get; set; }
+        public List<Deck> Decks { get; set; }
+
+        public List<Apocalypse> Apocalypses { get; set; }
+
+        public PlayerProfile PlayerTemplate { get; set; }
 
         public void LoadPrototypes()
         {
-            Prototypes = new PrototypeData
-            {
-                Apocalypses = Load<List<Apocalypse>>("Apocalypses.xml"),
-                Decks = Load<List<Deck>>("Decks.xml"),
-                PlayerTemplate = Load<PlayerProfile>("PlayerTemplate.xml"),
-            };
+            Apocalypses = Load<List<Apocalypse>>("Apocalypses.xml");
+            Decks = Load<List<Deck>>("Decks.xml");
+            PlayerTemplate = Load<PlayerProfile>("PlayerTemplate.xml");
         }
 
         private T Load<T>(string fileName) where T : class, new()

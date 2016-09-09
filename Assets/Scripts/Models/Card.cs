@@ -21,8 +21,10 @@ namespace Assets.Scripts.Models
         [XmlAttribute]
         public string RightOptionTextLocalCode { get; set; }
 
+        [XmlElement("LeftEffect")]
         public List<CardEffect> LeftEffects { get; set; }
 
+        [XmlElement("RightEffect")]
         public List<CardEffect> RightEffects { get; set; }
     }
 }

@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <PlayerProfile Name="DefaultProfileTemplate">
-	<UnlockedDeckNames>
-    <string>Default</string>
-	</UnlockedDeckNames>
-	<UnlockedAchievementNames>
-	</UnlockedAchievementNames>
-	<UnlockedApocalypseNames>
-    <string>Impact</string>
-	</UnlockedApocalypseNames>
+  <UnlockedDeck>Default</UnlockedDeck>
+	<UnlockedAchievement>StartGame</UnlockedAchievement>
+	<UnlockedApocalypse>Impact</UnlockedApocalypse>
 </PlayerProfile>

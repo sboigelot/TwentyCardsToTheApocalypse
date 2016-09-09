@@ -15,14 +15,12 @@ namespace Assets.Scripts.Models
         [XmlAttribute]
         public string Name { get; set; }
 
+        [XmlElement("Card")]
         public List<Card> Cards { get; set; }
         
         public static Deck Merge(List<Deck> availableDecks)
         {
-            Deck deck = new Deck
-            {
-                Cards = new List<Card>()
-            };
+            Deck deck = new Deck();
 
             foreach (var availableDeck in availableDecks)
             {

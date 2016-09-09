@@ -4,47 +4,40 @@
   <Apocalypse Name="Impact"
               BackgroundSpriteName="">
 
-    <StartupCard>
-      <Card Name="Impact Intro Card"
-            SpriteName="ImpactIntro"
-            DescriptionTextLocalCode="ImpactIntro"
-            LeftOptionTextLocalCode="PartyAndIgnoreApocalypse"
-            RightOptionTextLocalCode="TakleTheApocalypse">
+    <StartupCard Name="Impact Intro Card"
+          SpriteName="ImpactIntro"
+          DescriptionTextLocalCode="ImpactIntro"
+          LeftOptionTextLocalCode="PartyAndIgnoreApocalypse"
+          RightOptionTextLocalCode="TakleTheApocalypse">
 
-        <LeftEffects>
-          <CardEffect TurnDelay="0"
-                      TargetName="PartyAllTheTime"
-                      CardEffectType="UnlockAchievement"/>
-          <CardEffect TurnDelay="0"
-                      TargetName="Lazyidiocracy"
-                      CardEffectType="UnlockApocalypse"/>
-          <CardEffect TurnDelay="0"
-                      TargetName="Politic"
-                      FunctionParam="-100"
-                      CardEffectType="AffectWorldStat"/>
-        </LeftEffects>
+      <LeftEffect TurnDelay="0"
+                  TargetName="PartyAllTheTime"
+                  CardEffectType="UnlockAchievement"/>
+      <LeftEffect TurnDelay="0"
+                  TargetName="Lazyidiocracy"
+                  CardEffectType="UnlockApocalypse"/>
+      <LeftEffect TurnDelay="0"
+                  TargetName="Politic"
+                  FunctionParam="-100"
+                  CardEffectType="AffectWorldStat"/>
 
-        <RightEffects>
-          <CardEffect TurnDelay="0"
-                      TargetName="Politic"
-                      FunctionParam="+10"
-                      CardEffectType="AffectWorldStat"/>
-          <CardEffect TurnDelay="0"
-                      TargetName="Hope"
-                      FunctionParam="+10"
-                      CardEffectType="AffectWorldStat"/>
-        </RightEffects>
-      </Card>
+      <RightEffect TurnDelay="0"
+                  TargetName="Politic"
+                  FunctionParam="+10"
+                  CardEffectType="AffectWorldStat"/>
+      <RightEffect TurnDelay="0"
+                  TargetName="Hope"
+                  FunctionParam="+10"
+                  CardEffectType="AffectWorldStat"/>
     </StartupCard>
-    
+
     <StartupWorld>
 
     </StartupWorld>
 
-    <AvailableDeckNames>
-      <string>Default</string>
-    </AvailableDeckNames>
+    <AvailableDeck>Default</AvailableDeck>
+    <AvailableDeck>Default2</AvailableDeck>
 
   </Apocalypse>
-  
+
 </ArrayOfApocalypse>

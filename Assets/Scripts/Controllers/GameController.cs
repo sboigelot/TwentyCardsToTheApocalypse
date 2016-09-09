@@ -27,7 +27,7 @@ namespace Assets.Scripts.Controllers
         {
             PrototypeManager.Instance.LoadPrototypes();
             SaveManager.Instance.LoadProfiles();
-            GameManager.Instance.NewGame(PrototypeManager.Instance.Prototypes.Apocalypses.First());
+            GameManager.Instance.NewGame(PrototypeManager.Instance.Apocalypses.First());
             BindUi();
         }
 
@@ -47,10 +47,10 @@ namespace Assets.Scripts.Controllers
 
         private void BindUi()
         {
-            var card = GameManager.Instance.GameSession.CurrentCard;
+            var card = GameManager.Instance.CurrentCard;
             CardDescription.text = card.DescriptionTextLocalCode;
             CardFooter.text = card.Name;
-            TurnCountDown.text = GameManager.Instance.GameSession.TurnToApocalypse.ToString();
+            TurnCountDown.text = GameManager.Instance.TurnToApocalypse.ToString();
         }
     }
 }

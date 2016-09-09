@@ -80,7 +80,6 @@ namespace Assets.Scripts.Serialization
                 typeof(Apocalypse),
                 typeof(Card),
                 typeof(Deck),
-                typeof(GameSession),
                 typeof(PlayerProfile),
                 typeof(World),
                 typeof(WorldImprovement),

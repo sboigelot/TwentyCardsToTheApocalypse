@@ -11,6 +11,9 @@
       RaiseEmergencyTaxes +€ -H -G
       FundUniversities
       FundPrivateCompanies
+      PreventLootingOrNot -> +-PoliticalStability +-€
+      if hope very low -> JailAmnesty +H -PoliticalStability
+      GatherUN -> +PoliticalStability +H
       BuildABunkerStartChain -> Bunker Improvement
       BuildAMassiveNuke -> Massive Nuke Improvement
         - will raise a lot political stability
@@ -20,8 +23,8 @@
         - may allow you to bomb the asteroid is science & money get high
     -->
     
-    <Card Name="CallupTopScientistsMeeting"
-          SpriteName="CallupTopScientistsMeeting"
+    <Card Name="OrganizeTopScientistsMeeting"
+          SpriteName="OrganizeTopScientistsMeeting"
           DescriptionTextLocalCode="test_card_one_desc"
           LeftOptionTextLocalCode="test_card_one_left"
           RightOptionTextLocalCode="test_card_one_right">
@@ -30,6 +33,44 @@
         <LeftEffect TurnDelay="1" HasDialog="false" DialogSpriteName="" DialogTextLocalCode=""
                     CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-5"/>
     </Card>
+
+    <Card Name="GiveATvSpeachDenyingEverything"
+          SpriteName="GiveATvSpeachDenyingEverything"/>
+
+    <Card Name="CallupTopScientistsMeeting"
+          SpriteName="CallupTopScientistsMeeting"/>
+
+    <Card Name="GatherCrowdIdead"
+          SpriteName="GatherCrowdIdead"/>
+
+    <Card Name="RaiseEmergencyTaxes"
+          SpriteName="RaiseEmergencyTaxes"/>
+
+    <Card Name="FundUniversities"
+          SpriteName="FundUniversities"/>
+
+    <Card Name="FundPrivateCompanies"
+          SpriteName="FundPrivateCompanies"/>
+
+    <Card Name="PreventLootingOrNot"
+          SpriteName="PreventLootingOrNot"/>
+
+    <Card Name="JailAmnesty"
+          SpriteName="JailAmnesty"/>
+    <Card Name="GatherUN"
+          SpriteName="GatherUN"/>
+    
+    <Card Name="BuildAMassiveNuke"
+          SpriteName="BuildAMassiveNuke"/>
+
+    <Card Name="BombEnermy"
+          SpriteName="BombEnermy"/>
+
+    <Card Name="BombAsteroid"
+          SpriteName="BombAsteroid"/>
+    
+    <Card Name="BuildASpaceMission"
+          SpriteName="BuildASpaceMission"/>
   </Deck>
   
 </ArrayOfDeck>

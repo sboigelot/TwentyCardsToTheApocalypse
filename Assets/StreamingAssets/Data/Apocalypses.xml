@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfApocalypse>
 
+  <!--Ideas
+    Asteroid Impact
+    Mutual Assured Destruction (Atomic Fallout)
+    Intelligent Ape Take-Over
+    Plage - Pandenium
+    Aggressive Alien Invasion
+    Alien Infiltration
+    Lazy-Idiocracy
+  -->
+  
   <Apocalypse Name="Impact"
               BackgroundSpriteName="">
 

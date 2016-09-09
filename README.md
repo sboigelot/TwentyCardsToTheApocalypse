@@ -1,11 +1,16 @@
 # Twenty cards to the apocalypse [![Build Status](https://travis-ci.org/sboigelot/TwentyCardsToTheApocalypse.svg)](https://travis-ci.org/sboigelot/TwentyCardsToTheApocalypse)
 
-[About](#about)  
+![Preview Thumbnail](http://imgur.com/dV0KL0N)
+
+[About](#about)
 [Copyright & Licensing](#copyright--licensing)  
 [Contributing](#contributing)  
 [Contact](#contact) 
 
-## About
+## About  
+
+An open source homage to the game "[Reigns](http://www.devolverdigital.com/games/view/reigns)" (Devolver) 
+In the modern time, where you have 20 turn to save the earth from a pending doom
 
 ## Copyright & Licensing
 

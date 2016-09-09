@@ -52,21 +52,16 @@ namespace Assets.Scripts.Managers
 
         public void EndTurn(bool chooseLeft)
         {
-            if (chooseLeft)
-            {
-                EffectQueue.AddRange(CurrentCard.LeftEffects.Select(e => e.Clone()));
-            }
-            else
-            {
-                EffectQueue.AddRange(CurrentCard.RightEffects.Select(e => e.Clone()));
-            }
-
-            TurnToApocalypse--;
+            EffectQueue.AddRange(chooseLeft
+                ? CurrentCard.LeftEffects.Select(e => e.Clone())
+                : CurrentCard.RightEffects.Select(e => e.Clone()));
 
             if (TriggerEffects())
             {
                 return;
             }
+
+            TurnToApocalypse--;
 
             if (World.Stats.Any(s => s.Value <= 0 || s.Value >= 100) || TurnToApocalypse <= 0)
             {
@@ -75,7 +70,6 @@ namespace Assets.Scripts.Managers
             }
 
             DrawNextCard();
-            TurnToApocalypse--;
         }
 
         private void GameOver()

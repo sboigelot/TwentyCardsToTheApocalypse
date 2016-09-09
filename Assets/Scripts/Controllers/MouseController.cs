@@ -26,7 +26,7 @@ namespace Assets.Scripts.Controllers
             float horizontalMousePosition = mousePosition.x;
             centerRelatedMouseOffset = horizontalMousePosition - ((float)Screen.width / 2);
 
-            float absoluteDistanceFrom0To1 = Math.Abs(currentZRotation / 20f);
+            float absoluteDistanceFrom0To1 = Math.Abs(currentZRotation / 10f);
             float curvedSpeed = SpeedVariation.Evaluate(absoluteDistanceFrom0To1);
             float rotation = rotationSpeed * Time.deltaTime * curvedSpeed;
 
@@ -41,6 +41,7 @@ namespace Assets.Scripts.Controllers
                     GameController.Instance.ClickRight();
                 }
 
+                currentZRotation = 0f;
                 CardDisplay.localRotation = new Quaternion(0f, 0f, 0f, 0f);
                 return;
             }
@@ -52,8 +53,8 @@ namespace Assets.Scripts.Controllers
                     ChoiceText.text = Localizer.Get(GameManager.Instance.CurrentCard.LeftOptionTextLocalCode);
                 }
 
-                currentZRotation = Mathf.Max(-20f, currentZRotation - .1f);
-                if (currentZRotation > -20f)
+                currentZRotation = Mathf.Max(-10f, currentZRotation - .1f);
+                if (currentZRotation > -10f)
                 {
                     CardDisplay.Rotate(Vector3.forward, Mathf.Deg2Rad * rotation);
                 }
@@ -65,8 +66,8 @@ namespace Assets.Scripts.Controllers
                     ChoiceText.text = Localizer.Get(GameManager.Instance.CurrentCard.RightOptionTextLocalCode);
                 }
 
-                currentZRotation = Mathf.Min(+20f, currentZRotation + .1f);
-                if (currentZRotation < 20f)
+                currentZRotation = Mathf.Min(+10f, currentZRotation + .1f);
+                if (currentZRotation < 10f)
                 {
                     CardDisplay.Rotate(Vector3.back, Mathf.Deg2Rad * rotation);
                 }

@@ -1,6 +1,6 @@
 # Twenty cards to the apocalypse [![Build Status](https://travis-ci.org/sboigelot/TwentyCardsToTheApocalypse.svg)](https://travis-ci.org/sboigelot/TwentyCardsToTheApocalypse)
 
-![Preview Thumbnail](http://imgur.com/dV0KL0N)
+![Preview Thumbnail](http://i.imgur.com/dV0KL0N.png)
 
 [About](#about)
 [Copyright & Licensing](#copyright--licensing)  

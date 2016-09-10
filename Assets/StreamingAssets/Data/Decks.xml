@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfDeck>
-  
+
   <Deck Name="Default">
-    
     <Card Name="OrganizeTopScientistsMeeting"
           SpriteName="OrganizeTopScientistsMeeting"
           DescriptionTextLocalCode="OrganizeTopScientistsMeeting_desc"
@@ -38,7 +37,7 @@
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-10"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+5"/>
     </Card>
-    
+
     <Card Name="RaiseEmergencyTaxes"
           SpriteName="RaiseEmergencyTaxes"
           DescriptionTextLocalCode="RaiseEmergencyTaxes_desc"
@@ -89,7 +88,7 @@
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-5"/>
       <LeftEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-30"/>
     </Card>
-    
+
     <Card Name="GatherUN"
           SpriteName="GatherUN"
           DescriptionTextLocalCode="GatherUN_desc"
@@ -100,7 +99,9 @@
       <RightEffect CardEffectType="PrioritizeCard" TargetName="BuildASpaceMission" FunctionParam="4"/>
       <LeftEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-3"/>
     </Card>
-    
+  </Deck>
+
+  <Deck Name="Nuke">
     <Card Name="BuildAMassiveNuke"
           SpriteName="BuildAMassiveNuke"
           DescriptionTextLocalCode="BuildAMassiveNuke_desc"
@@ -115,16 +116,18 @@
       <LeftEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="+5"/>
     </Card>
 
-    <!--<Card Name="BombEnermy"
+    <Card Name="BombEnermy"
           SpriteName="BombEnermy"
-          DescriptionTextLocalCode="BombAsteroid_desc"
-          LeftOptionTextLocalCode="BombAsteroid_no"
-          RightOptionTextLocalCode="BombAsteroid_yes">
-      <Require ImprovementName="MassiveNuke"/>
+          DescriptionTextLocalCode="BombEnermy_desc"
+          LeftOptionTextLocalCode="BombEnermy_no"
+          RightOptionTextLocalCode="BombEnermy_yes">
+      <Require WorldShouldHaveImprovement="true" ImprovementName="MassiveNuke"/>
       <Require StatName="Politic" IsLesserThen="true" Value="30"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="+70"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-30"/>
-    </Card>-->
+      <RightEffect CardEffectType="RemoveImprovement" TargetName="MassiveNuke"/>
+      <RightEffect CardEffectType="UnlockApocalypse" TargetName="MutualAssuredDestruction"/>
+    </Card>
 
     <Card Name="BombAsteroid"
           SpriteName="BombAsteroid"
@@ -132,9 +135,12 @@
           LeftOptionTextLocalCode="BombAsteroid_no"
           RightOptionTextLocalCode="BombAsteroid_yes">
       <Require WorldShouldHaveImprovement="true" ImprovementName="MassiveNuke"/>
+      <Require ApocalypseName="Impact"/>
       <RightEffect CardEffectType="Victory"/>
     </Card>
-    
+  </Deck>
+
+  <Deck Name="SpaceMission">
     <Card Name="BuildASpaceMission"
           SpriteName="BuildASpaceMission"
           DescriptionTextLocalCode="BuildASpaceMission_desc"
@@ -152,8 +158,8 @@
           LeftOptionTextLocalCode="BombAsteroidSpaceMission_no"
           RightOptionTextLocalCode="BombAsteroidSpaceMission_yes">
       <Require WorldShouldHaveImprovement="true" ImprovementName="SpaceMission"/>
+      <Require ApocalypseName="Impact"/>
       <RightEffect CardEffectType="Victory"/>
     </Card>
   </Deck>
-  
 </ArrayOfDeck>

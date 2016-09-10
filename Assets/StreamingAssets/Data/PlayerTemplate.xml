@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <PlayerProfile Name="DefaultProfileTemplate">
   <UnlockedDeck>Default</UnlockedDeck>
-	<UnlockedAchievement>StartGame</UnlockedAchievement>
+  <UnlockedDeck>Nuke</UnlockedDeck>
+  <UnlockedDeck>SpaceMission</UnlockedDeck>
 	<UnlockedApocalypse>Impact</UnlockedApocalypse>
 </PlayerProfile>

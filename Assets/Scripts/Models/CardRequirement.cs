@@ -24,6 +24,9 @@ namespace Assets.Scripts.Models
         [XmlAttribute]
         public string ImprovementName { get; set; }
 
+        [XmlAttribute]
+        public string ApocalypseName { get; set; }
+
         public bool IsSatisfied()
         {
             if (!string.IsNullOrEmpty(StatName))
@@ -55,6 +58,14 @@ namespace Assets.Scripts.Models
                     {
                         return false;
                     }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(ApocalypseName))
+            {
+                if (GameManager.Instance.Apocalypse.Name != ApocalypseName)
+                {
+                    return false;
                 }
             }
 

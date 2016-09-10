@@ -2,7 +2,6 @@
 <ArrayOfApocalypse>
 
   <!--Ideas
-    Asteroid Impact
     Mutual Assured Destruction (Atomic Fallout)
     Intelligent Ape Take-Over
     Plage - Pandenium
@@ -83,7 +82,8 @@
     </StartupWorld>
 
     <AvailableDeck>Default</AvailableDeck>
-    <AvailableDeck>Default2</AvailableDeck>
+    <AvailableDeck>Nuke</AvailableDeck>
+    <AvailableDeck>SpaceMission</AvailableDeck>
 
   </Apocalypse>
 

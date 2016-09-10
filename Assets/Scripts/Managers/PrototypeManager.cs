@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using Assets.Scripts.Localization;
 using Assets.Scripts.Models;
 using Assets.Scripts.Serialization;
 using UnityEngine;
@@ -19,6 +21,9 @@ namespace Assets.Scripts.Managers
             Apocalypses = Load<List<Apocalypse>>("Apocalypses.xml");
             Decks = Load<List<Deck>>("Decks.xml");
             PlayerTemplate = Load<PlayerProfile>("PlayerTemplate.xml");
+
+            var allCards = Decks.SelectMany(d => d.Cards).ToList();
+            Localizer.Instance.EnsureAllLocalKeyExist(allCards);
         }
 
         private T Load<T>(string fileName) where T : class, new()

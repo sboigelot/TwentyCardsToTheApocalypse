@@ -19,13 +19,19 @@
 
     <WolrdEndCard Name="ImpactWorldEndCard"
           SpriteName="ImpactWorldEnd"
-          DescriptionTextLocalCode="ImpactWorldEnd"
+          DescriptionTextLocalCode="ImpactWorld_desc"
           LeftOptionTextLocalCode="Hem"
           RightOptionTextLocalCode="What"/>
+
+    <VictoryCard Name="ImpactVictoryCard"
+          SpriteName="ImpactVictory"
+          DescriptionTextLocalCode="ImpactVictory_desc"
+          LeftOptionTextLocalCode="Celebrate"
+          RightOptionTextLocalCode="Rest"/>
     
     <StartupCard Name="ImpactIntroCard"
           SpriteName="ImpactIntro"
-          DescriptionTextLocalCode="ImpactIntro"
+          DescriptionTextLocalCode="ImpactIntro_desc"
           LeftOptionTextLocalCode="PartyAndIgnoreApocalypse"
           RightOptionTextLocalCode="TakleTheApocalypse">
 
@@ -71,7 +77,7 @@
             CurrentMinOutLocalCode="stat_science_minout"/>
       <Stat Name="Money"
             SpriteName="stat_money"
-            Value="25" 
+            Value="35" 
             CurrentMaxOutLocalCode="stat_money_maxout" 
             CurrentMinOutLocalCode="stat_money_minout"/>
     </StartupWorld>

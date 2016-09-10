@@ -8,6 +8,7 @@ namespace Assets.Scripts.Models.Effects
         UnlockAchievement,
         UnlockApocalypse,
         UnlockDeck,
-        BuildImprovement
+        BuildImprovement,
+        Victory
     }
 }

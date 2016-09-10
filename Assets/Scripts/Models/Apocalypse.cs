@@ -19,6 +19,9 @@ namespace Assets.Scripts.Models
         [XmlElement("WolrdEndCard")]
         public Card WolrdEndCard { get; set; }
 
+        [XmlElement("VictoryCard")]
+        public Card VictoryCard { get; set; }
+
         [XmlElement("StartupWorld")]
         public World StartupWorld { get; set; }
 

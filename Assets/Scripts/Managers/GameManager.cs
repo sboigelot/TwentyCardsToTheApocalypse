@@ -73,6 +73,12 @@ namespace Assets.Scripts.Managers
             DrawNextCard();
         }
 
+        public void WindGame()
+        {
+            CurrentCard = Apocalypse.VictoryCard;
+            TurnToApocalypse = 20;
+        }
+
         private void GameOver()
         {
             CurrentCard = Apocalypse.WolrdEndCard;
@@ -85,8 +91,12 @@ namespace Assets.Scripts.Managers
             {
                 if (effect.TurnDelay == 0)
                 {
-                    effect.Trigger();
                     EffectQueue.Remove(effect);
+
+                    if (effect.Trigger())
+                    {
+                        return true;
+                    }
 
                     if (effect.HasDialog)
                     {
@@ -95,8 +105,8 @@ namespace Assets.Scripts.Managers
                             Name = "EffectDialog",
                             DescriptionTextLocalCode = effect.DialogTextLocalCode,
                             SpriteName = effect.DialogSpriteName,
-                            LeftOptionTextLocalCode = "Hem...",
-                            RightOptionTextLocalCode = "What!",
+                            LeftOptionTextLocalCode = "Hem",
+                            RightOptionTextLocalCode = "What",
                         };
 
                         return true;

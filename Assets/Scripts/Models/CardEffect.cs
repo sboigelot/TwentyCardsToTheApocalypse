@@ -49,7 +49,7 @@ namespace Assets.Scripts.Models.Effects
             };
         }
 
-        public void Trigger()
+        public bool Trigger()
         {
             var gameManager = GameManager.Instance;
             switch (EffectType)
@@ -96,7 +96,14 @@ namespace Assets.Scripts.Models.Effects
                 case CardEffectType.BuildImprovement:
                     gameManager.World.Improvements.Add(new WorldImprovement { Name = TargetName });
                     break;
+
+                case CardEffectType.Victory:
+                    gameManager.WindGame();
+                    return true;
+                    break;
             }
+
+            return false;
         }
     }
 }

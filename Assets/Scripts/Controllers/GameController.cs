@@ -76,12 +76,17 @@ namespace Assets.Scripts.Controllers
             if (GameManager.Instance.CurrentCard == GameManager.Instance.Apocalypse.WolrdEndCard)
             {
                 DialogBoxController.Instance.SwitchToScreen(DialogBoxController.Instance.EndGameScreen);
+                return;
             }
-            else
+
+            if (GameManager.Instance.CurrentCard == GameManager.Instance.Apocalypse.VictoryCard)
             {
-                GameManager.Instance.EndTurn(left);
-                BindUi();
+                DialogBoxController.Instance.SwitchToScreen(DialogBoxController.Instance.EndGameScreen);
+                return;
             }
+
+            GameManager.Instance.EndTurn(left);
+            BindUi();
         }
 
         private void BindUi()

@@ -35,11 +35,13 @@
       <RightEffect TurnDelay="2" CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+2"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-15"/>
       <RightEffect CardEffectType="BuildImprovement" TargetName="ScientistMeeting" FunctionParam="3"/>
+      <RightEffect CardEffectType="PrioritizeCard" TargetName="BuildAMassiveNuke" FunctionParam="4"/>
       <LeftEffect TurnDelay="2" CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-5"/>
     </Card>
 
     <Card Name="GiveATvSpeachDenyingEverything"
           SpriteName="GiveATvSpeachDenyingEverything"
+          DescriptionTextLocalCode="GiveATvSpeachDenyingEverything_desc"
           LeftOptionTextLocalCode="GiveATvSpeachDenyingEverything_no"
           RightOptionTextLocalCode="GiveATvSpeachDenyingEverything_yes">
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-10"/>
@@ -50,16 +52,18 @@
 
     <Card Name="GatherCrowdIdead"
           SpriteName="GatherCrowdIdead"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="GatherCrowdIdead_desc"
+          LeftOptionTextLocalCode="GatherCrowdIdead_no"
+          RightOptionTextLocalCode="GatherCrowdIdead_yes">
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-10"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+5"/>
     </Card>
     
     <Card Name="RaiseEmergencyTaxes"
           SpriteName="RaiseEmergencyTaxes"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="RaiseEmergencyTaxes_desc"
+          LeftOptionTextLocalCode="RaiseEmergencyTaxes_no"
+          RightOptionTextLocalCode="RaiseEmergencyTaxes_yes">
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="+10"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-20"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-10"/>
@@ -67,26 +71,29 @@
 
     <Card Name="FundUniversities"
           SpriteName="FundUniversities"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="FundUniversities_desc"
+          LeftOptionTextLocalCode="FundUniversities_no"
+          RightOptionTextLocalCode="FundUniversities_yes">
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-15"/>
-      <RightEffect CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+10"/>
+      <RightEffect CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+20"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="+5"/>
     </Card>
 
     <Card Name="FundPrivateCompanies"
           SpriteName="FundPrivateCompanies"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="FundPrivateCompanies_desc"
+          LeftOptionTextLocalCode="FundPrivateCompanies_no"
+          RightOptionTextLocalCode="FundPrivateCompanies_yes">
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-15"/>
-      <RightEffect CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+10"/>
+      <RightEffect CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+20"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="+5"/>
     </Card>
 
     <Card Name="PreventLootingOrNot"
           SpriteName="PreventLootingOrNot"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="PreventLootingOrNot_desc"
+          LeftOptionTextLocalCode="PreventLootingOrNot_no"
+          RightOptionTextLocalCode="PreventLootingOrNot_yes">
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="5"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="5"/>
       <LeftEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-10"/>
@@ -95,8 +102,9 @@
 
     <Card Name="JailAmnesty"
           SpriteName="JailAmnesty"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="JailAmnesty_desc"
+          LeftOptionTextLocalCode="JailAmnesty_no"
+          RightOptionTextLocalCode="JailAmnesty_yes">
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="10"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-5"/>
       <LeftEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-30"/>
@@ -104,20 +112,23 @@
     
     <Card Name="GatherUN"
           SpriteName="GatherUN"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="GatherUN_desc"
+          LeftOptionTextLocalCode="GatherUN_no"
+          RightOptionTextLocalCode="GatherUN_yes">
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="3"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="15"/>
+      <RightEffect CardEffectType="PrioritizeCard" TargetName="BuildASpaceMission" FunctionParam="4"/>
       <LeftEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-3"/>
     </Card>
     
     <Card Name="BuildAMassiveNuke"
           SpriteName="BuildAMassiveNuke"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
-      <Require StatName="Money" IsBiggerThen="true" Value="50" />
+          DescriptionTextLocalCode="BuildAMassiveNuke_desc"
+          LeftOptionTextLocalCode="BuildAMassiveNuke_no"
+          RightOptionTextLocalCode="BuildAMassiveNuke_yes">
+      <Require StatName="Money" IsBiggerThen="true" Value="30" />
       <Require StatName="Science" IsBiggerThen="true" Value="30" ImprovementName=""/>
-      <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-40"/>
+      <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-20"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-15"/>
       <RightEffect CardEffectType="BuildImprovement" TargetName="MassiveNuke"/>
       <LeftEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="+5"/>
@@ -125,8 +136,9 @@
 
     <Card Name="BombEnermy"
           SpriteName="BombEnermy"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="BombAsteroid_desc"
+          LeftOptionTextLocalCode="BombAsteroid_no"
+          RightOptionTextLocalCode="BombAsteroid_yes">
       <Require ImprovementName="MassiveNuke"/>
       <Require StatName="Politic" IsLesserThen="true" Value="30"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="+70"/>
@@ -135,15 +147,18 @@
 
     <Card Name="BombAsteroid"
           SpriteName="BombAsteroid"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="BombAsteroid_desc"
+          LeftOptionTextLocalCode="BombAsteroid_no"
+          RightOptionTextLocalCode="BombAsteroid_yes">
       <Require ImprovementName="MassiveNuke"/>
+      <RightEffect CardEffectType="Victory"/>
     </Card>
     
     <Card Name="BuildASpaceMission"
           SpriteName="BuildASpaceMission"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
+          DescriptionTextLocalCode="BuildASpaceMission_desc"
+          LeftOptionTextLocalCode="BuildASpaceMission_no"
+          RightOptionTextLocalCode="BuildASpaceMission_yes">
       <Require StatName="Politic" IsBiggerThen="true" Value="25" />
       <Require StatName="Science" IsBiggerThen="true" Value="40"/>
       <RightEffect CardEffectType="BuildImprovement" TargetName="SpaceMission"/>
@@ -151,9 +166,11 @@
 
     <Card Name="BombAsteroidSpaceMission"
           SpriteName="BombAsteroid"
-          LeftOptionTextLocalCode="_no"
-          RightOptionTextLocalCode="_yes">
-      <Require ImprovementName="MassiveNuke"/>
+          DescriptionTextLocalCode="BombAsteroidSpaceMission_desc"
+          LeftOptionTextLocalCode="BombAsteroidSpaceMission_no"
+          RightOptionTextLocalCode="BombAsteroidSpaceMission_yes">
+      <Require ImprovementName="SpaceMission"/>
+      <RightEffect CardEffectType="Victory"/>
     </Card>
   </Deck>
   

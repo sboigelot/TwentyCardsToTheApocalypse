@@ -36,5 +36,18 @@ namespace Assets.Scripts.Models
         
         [XmlElement("Require")]
         public List<CardRequirement> CardRequirements { get; set; }
+
+        public bool IsValid()
+        {
+            foreach (var cardRequirement in CardRequirements)
+            {
+                if (!cardRequirement.IsSatisfied())
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

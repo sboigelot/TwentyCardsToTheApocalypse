@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Controllers;
 using Assets.Scripts.Models;
 using Assets.Scripts.Models.Effects;
 
@@ -123,6 +124,11 @@ namespace Assets.Scripts.Managers
             DiscardPile.Cards.Add(newCard);
             CurrentCard = newCard;
             MixedDeck.Cards.RemoveAt(0);
+
+            if (!newCard.IsValid())
+            {
+                DrawNextCard();
+            }
         }
     }
 }

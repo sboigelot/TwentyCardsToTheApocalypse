@@ -51,10 +51,11 @@ namespace Assets.Scripts.Models.Effects
 
         public void Trigger()
         {
+            var gameManager = GameManager.Instance;
             switch (EffectType)
             {
                 case CardEffectType.AffectWorldStat:
-                    var stat = GameManager.Instance.World.Stats.FirstOrDefault(s => s.Name == TargetName);
+                    var stat = gameManager.World.Stats.FirstOrDefault(s => s.Name == TargetName);
                     if (stat != null)
                     {
                         stat.Value += FunctionParam;
@@ -63,23 +64,37 @@ namespace Assets.Scripts.Models.Effects
                     break;
 
                 case CardEffectType.PrioritizeCard:
-                    // TODO.
+                    var cards = gameManager.MixedDeck.Cards.Where(c => c.Name == TargetName).ToList();
+                    foreach (var card in cards)
+                    {
+                        var oldIndex = gameManager.MixedDeck.Cards.IndexOf(card);
+                        var newIndex = Math.Max(
+                            0,
+                            Math.Min(gameManager.MixedDeck.Cards.Count - 2, oldIndex + FunctionParam));
+                        gameManager.MixedDeck.Cards.RemoveAt(oldIndex);
+                        gameManager.MixedDeck.Cards.Insert(newIndex, card);
+                    }
+
                     break;
 
                 case CardEffectType.ShuffleDeck:
-                    GameManager.Instance.MixedDeck.Shuffle();
+                    gameManager.MixedDeck.Shuffle();
                     break;
 
                 case CardEffectType.UnlockAchievement:
-                    GameManager.Instance.Player.UnlockedAchievementNames.Add(TargetName);
+                    gameManager.Player.UnlockedAchievementNames.Add(TargetName);
                     break;
 
                 case CardEffectType.UnlockApocalypse:
-                    GameManager.Instance.Player.UnlockedApocalypseNames.Add(TargetName);
+                    gameManager.Player.UnlockedApocalypseNames.Add(TargetName);
                     break;
 
                 case CardEffectType.UnlockDeck:
-                    GameManager.Instance.Player.UnlockedDeckNames.Add(TargetName);
+                    gameManager.Player.UnlockedDeckNames.Add(TargetName);
+                    break;
+
+                case CardEffectType.BuildImprovement:
+                    gameManager.World.Improvements.Add(new WorldImprovement { Name = TargetName });
                     break;
             }
         }

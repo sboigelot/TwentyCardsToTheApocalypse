@@ -35,6 +35,13 @@ namespace Assets.Scripts.Controllers
 
         public void Update()
         {
+            if (GameManager.Instance.CurrentCard == null)
+            {
+                currentZRotation = 0f;
+                CardDisplay.localRotation = new Quaternion(0f, 0f, 0f, 0f);
+                return;
+            }
+
             Vector2 mousePosition = Input.mousePosition;
             float horizontalMousePosition = mousePosition.x;
             centerRelatedMouseOffset = horizontalMousePosition - ((float)Screen.width / 2);
@@ -61,12 +68,9 @@ namespace Assets.Scripts.Controllers
 
             if (centerRelatedMouseOffset < -150f)
             {
-                if (GameManager.Instance.CurrentCard != null)
-                {
-                    UpdateUi(
-                        GameManager.Instance.CurrentCard.LeftOptionTextLocalCode,
-                        GameManager.Instance.CurrentCard.LeftEffects);
-                }
+                UpdateUi(
+                    GameManager.Instance.CurrentCard.LeftOptionTextLocalCode,
+                    GameManager.Instance.CurrentCard.LeftEffects);
 
                 currentZRotation = Mathf.Max(-10f, currentZRotation - .1f);
                 if (currentZRotation > -10f)
@@ -76,12 +80,9 @@ namespace Assets.Scripts.Controllers
             }
             else if (centerRelatedMouseOffset > 150f)
             {
-                if (GameManager.Instance.CurrentCard != null)
-                {
-                    UpdateUi(
-                        GameManager.Instance.CurrentCard.RightOptionTextLocalCode,
-                        GameManager.Instance.CurrentCard.RightEffects);
-                }
+                UpdateUi(
+                    GameManager.Instance.CurrentCard.RightOptionTextLocalCode,
+                    GameManager.Instance.CurrentCard.RightEffects);
 
                 currentZRotation = Mathf.Min(+10f, currentZRotation + .1f);
                 if (currentZRotation < 10f)

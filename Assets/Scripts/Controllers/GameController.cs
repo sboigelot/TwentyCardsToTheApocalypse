@@ -45,6 +45,10 @@ namespace Assets.Scripts.Controllers
         {
             PrototypeManager.Instance.LoadPrototypes();
             SaveManager.Instance.LoadProfiles();
+        }
+
+        public void NewGame()
+        {
             GameManager.Instance.NewGame(PrototypeManager.Instance.Apocalypses.First());
             BindUi();
         }
@@ -52,15 +56,32 @@ namespace Assets.Scripts.Controllers
         public void ClickLeft()
         {
             Debug.Log("Click Left");
-            GameManager.Instance.EndTurn(true);
-            BindUi();
+            Click(true);
         }
 
         public void ClickRight()
         {
             Debug.Log("Click Right");
-            GameManager.Instance.EndTurn(false);
-            BindUi();
+            Click(false);
+        }
+
+        private void Click(bool left)
+        {
+            if (GameManager.Instance.CurrentCard == null ||
+                GameManager.Instance.Apocalypse == null)
+            {
+                return;
+            }
+
+            if (GameManager.Instance.CurrentCard == GameManager.Instance.Apocalypse.WolrdEndCard)
+            {
+                DialogBoxController.Instance.SwitchToScreen(DialogBoxController.Instance.EndGameScreen);
+            }
+            else
+            {
+                GameManager.Instance.EndTurn(left);
+                BindUi();
+            }
         }
 
         private void BindUi()

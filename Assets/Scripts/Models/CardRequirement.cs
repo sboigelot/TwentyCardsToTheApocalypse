@@ -19,6 +19,9 @@ namespace Assets.Scripts.Models
         public int Value { get; set; }
 
         [XmlAttribute]
+        public bool WorldShouldHaveImprovement { get; set; }
+
+        [XmlAttribute]
         public string ImprovementName { get; set; }
 
         public bool IsSatisfied()
@@ -39,9 +42,19 @@ namespace Assets.Scripts.Models
 
             if (!string.IsNullOrEmpty(ImprovementName))
             {
-                if (GameManager.Instance.World.Improvements.All(i => i.Name != ImprovementName))
+                if (WorldShouldHaveImprovement)
                 {
-                    return false;
+                    if (GameManager.Instance.World.Improvements.All(i => i.Name != ImprovementName))
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (GameManager.Instance.World.Improvements.Any(i => i.Name == ImprovementName))
+                    {
+                        return false;
+                    }
                 }
             }
 

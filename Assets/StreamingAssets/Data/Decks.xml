@@ -3,26 +3,6 @@
   
   <Deck Name="Default">
     
-    <!--
-    ideas: Gov Hope Science €
-      OrganizeTopScientistsMeeting -3G +3H +10S -20€ 
-      GiveATvSpeachDenyingEverything -10G +30H / +5G -10H 
-      GatherCrowdIdead -10G +5S
-      RaiseEmergencyTaxes +€ -H -G
-      FundUniversities
-      FundPrivateCompanies
-      PreventLootingOrNot -> +-PoliticalStability +-€
-      if hope very low -> JailAmnesty +H -PoliticalStability
-      GatherUN -> +PoliticalStability +H
-      BuildABunkerStartChain -> Bunker Improvement
-      BuildAMassiveNuke -> Massive Nuke Improvement
-        - will raise a lot political stability
-        - allow you to bomb enemy country before they bomb you if stability goes down too mucj -> unlock Atomic Apocalypse
-        - may allow you to bomb the asteroid is science get high
-      BuildASpaceMission -> Space Mission Improvement        
-        - may allow you to bomb the asteroid is science & money get high
-    -->
-    
     <Card Name="OrganizeTopScientistsMeeting"
           SpriteName="OrganizeTopScientistsMeeting"
           DescriptionTextLocalCode="OrganizeTopScientistsMeeting_desc"
@@ -126,6 +106,7 @@
           DescriptionTextLocalCode="BuildAMassiveNuke_desc"
           LeftOptionTextLocalCode="BuildAMassiveNuke_no"
           RightOptionTextLocalCode="BuildAMassiveNuke_yes">
+      <Require WorldShouldHaveImprovement="false" ImprovementName="MassiveNuke"/>
       <Require StatName="Money" IsBiggerThen="true" Value="30" />
       <Require StatName="Science" IsBiggerThen="true" Value="30" ImprovementName=""/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-20"/>
@@ -134,7 +115,7 @@
       <LeftEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="+5"/>
     </Card>
 
-    <Card Name="BombEnermy"
+    <!--<Card Name="BombEnermy"
           SpriteName="BombEnermy"
           DescriptionTextLocalCode="BombAsteroid_desc"
           LeftOptionTextLocalCode="BombAsteroid_no"
@@ -143,14 +124,14 @@
       <Require StatName="Politic" IsLesserThen="true" Value="30"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="+70"/>
       <RightEffect CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-30"/>
-    </Card>
+    </Card>-->
 
     <Card Name="BombAsteroid"
           SpriteName="BombAsteroid"
           DescriptionTextLocalCode="BombAsteroid_desc"
           LeftOptionTextLocalCode="BombAsteroid_no"
           RightOptionTextLocalCode="BombAsteroid_yes">
-      <Require ImprovementName="MassiveNuke"/>
+      <Require WorldShouldHaveImprovement="true" ImprovementName="MassiveNuke"/>
       <RightEffect CardEffectType="Victory"/>
     </Card>
     
@@ -159,6 +140,7 @@
           DescriptionTextLocalCode="BuildASpaceMission_desc"
           LeftOptionTextLocalCode="BuildASpaceMission_no"
           RightOptionTextLocalCode="BuildASpaceMission_yes">
+      <Require WorldShouldHaveImprovement="false" ImprovementName="SpaceMission"/>
       <Require StatName="Politic" IsBiggerThen="true" Value="25" />
       <Require StatName="Science" IsBiggerThen="true" Value="40"/>
       <RightEffect CardEffectType="BuildImprovement" TargetName="SpaceMission"/>
@@ -169,7 +151,7 @@
           DescriptionTextLocalCode="BombAsteroidSpaceMission_desc"
           LeftOptionTextLocalCode="BombAsteroidSpaceMission_no"
           RightOptionTextLocalCode="BombAsteroidSpaceMission_yes">
-      <Require ImprovementName="SpaceMission"/>
+      <Require WorldShouldHaveImprovement="true" ImprovementName="SpaceMission"/>
       <RightEffect CardEffectType="Victory"/>
     </Card>
   </Deck>

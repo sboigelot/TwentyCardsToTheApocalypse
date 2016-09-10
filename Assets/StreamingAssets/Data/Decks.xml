@@ -37,9 +37,6 @@
     <Card Name="GiveATvSpeachDenyingEverything"
           SpriteName="GiveATvSpeachDenyingEverything"/>
 
-    <Card Name="CallupTopScientistsMeeting"
-          SpriteName="CallupTopScientistsMeeting"/>
-
     <Card Name="GatherCrowdIdead"
           SpriteName="GatherCrowdIdead"/>
 
@@ -57,6 +54,7 @@
 
     <Card Name="JailAmnesty"
           SpriteName="JailAmnesty"/>
+    
     <Card Name="GatherUN"
           SpriteName="GatherUN"/>
     

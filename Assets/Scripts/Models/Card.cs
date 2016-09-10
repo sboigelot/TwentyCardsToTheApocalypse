@@ -11,6 +11,7 @@ namespace Assets.Scripts.Models
         {
             LeftEffects = new List<CardEffect>();
             RightEffects = new List<CardEffect>();
+            CardRequirements = new List<CardRequirement>();
         }
 
         [XmlAttribute]
@@ -33,5 +34,8 @@ namespace Assets.Scripts.Models
 
         [XmlElement("RightEffect")]
         public List<CardEffect> RightEffects { get; set; }
+        
+        [XmlElement("Require")]
+        public List<CardRequirement> CardRequirements { get; set; }
     }
 }

@@ -80,7 +80,7 @@ namespace Assets.Scripts.Managers
 
         private bool TriggerEffects()
         {
-            foreach (var effect in EffectQueue.ToList())
+            foreach (var effect in EffectQueue.OrderBy(e => e.TurnDelay).ToList())
             {
                 if (effect.TurnDelay == 0)
                 {

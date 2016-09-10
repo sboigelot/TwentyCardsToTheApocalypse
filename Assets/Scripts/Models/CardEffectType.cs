@@ -7,6 +7,7 @@ namespace Assets.Scripts.Models.Effects
         AffectWorldStat,
         UnlockAchievement,
         UnlockApocalypse,
-        UnlockDeck
+        UnlockDeck,
+        BuildImprovement
     }
 }

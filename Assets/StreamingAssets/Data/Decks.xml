@@ -25,50 +25,148 @@
     
     <Card Name="OrganizeTopScientistsMeeting"
           SpriteName="OrganizeTopScientistsMeeting"
-          DescriptionTextLocalCode="test_card_one_desc"
-          LeftOptionTextLocalCode="test_card_one_left"
-          RightOptionTextLocalCode="test_card_one_right">
-        <LeftEffect TurnDelay="0" HasDialog="true" DialogSpriteName="" DialogTextLocalCode=""
-                    CardEffectType="ShuffleDeck" TargetName="" FunctionParam="0"/>
-        <LeftEffect TurnDelay="1" HasDialog="false" DialogSpriteName="" DialogTextLocalCode=""
-                    CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-5"/>
+          DescriptionTextLocalCode="OrganizeTopScientistsMeeting_desc"
+          LeftOptionTextLocalCode="OrganizeTopScientistsMeeting_no"
+          RightOptionTextLocalCode="OrganizeTopScientistsMeeting_yes">
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-3"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="+3"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+10"/>
+      <RightEffect TurnDelay="1"
+                  CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+5"/>
+      <RightEffect TurnDelay="2"
+                  CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+2"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-15"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="BuildImprovement" TargetName="ScientistMeeting" FunctionParam="3"/>
+      <LeftEffect TurnDelay="2"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-5"/>
     </Card>
 
     <Card Name="GiveATvSpeachDenyingEverything"
-          SpriteName="GiveATvSpeachDenyingEverything"/>
+          SpriteName="GiveATvSpeachDenyingEverything"
+          LeftOptionTextLocalCode="GiveATvSpeachDenyingEverything_no"
+          RightOptionTextLocalCode="GiveATvSpeachDenyingEverything_yes">
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-10"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="+15"/>
+      <LeftEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="+5"/>
+      <LeftEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-5"/>
+    </Card>
 
     <Card Name="GatherCrowdIdead"
-          SpriteName="GatherCrowdIdead"/>
-
+          SpriteName="GatherCrowdIdead"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-10"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+5"/>
+    </Card>
+    
     <Card Name="RaiseEmergencyTaxes"
-          SpriteName="RaiseEmergencyTaxes"/>
+          SpriteName="RaiseEmergencyTaxes"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="+10"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-20"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-10"/>
+    </Card>
 
     <Card Name="FundUniversities"
-          SpriteName="FundUniversities"/>
+          SpriteName="FundUniversities"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-15"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+10"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="+5"/>
+    </Card>
 
     <Card Name="FundPrivateCompanies"
-          SpriteName="FundPrivateCompanies"/>
+          SpriteName="FundPrivateCompanies"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-15"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Science" FunctionParam="+10"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="+5"/>
+    </Card>
 
     <Card Name="PreventLootingOrNot"
-          SpriteName="PreventLootingOrNot"/>
+          SpriteName="PreventLootingOrNot"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="5"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="5"/>
+      <LeftEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Money" FunctionParam="-10"/>
+      <LeftEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-5"/>
+    </Card>
 
     <Card Name="JailAmnesty"
-          SpriteName="JailAmnesty"/>
+          SpriteName="JailAmnesty"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="10"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="-5"/>
+      <LeftEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-30"/>
+    </Card>
     
     <Card Name="GatherUN"
-          SpriteName="GatherUN"/>
+          SpriteName="GatherUN"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="3"/>
+      <RightEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Politic" FunctionParam="15"/>
+      <LeftEffect TurnDelay="0"
+                  CardEffectType="AffectWorldStat" TargetName="Hope" FunctionParam="-3"/>
+    </Card>
     
     <Card Name="BuildAMassiveNuke"
-          SpriteName="BuildAMassiveNuke"/>
+          SpriteName="BuildAMassiveNuke"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+    </Card>
 
     <Card Name="BombEnermy"
-          SpriteName="BombEnermy"/>
+          SpriteName="BombEnermy"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+    </Card>
 
     <Card Name="BombAsteroid"
-          SpriteName="BombAsteroid"/>
+          SpriteName="BombAsteroid"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+    </Card>
     
     <Card Name="BuildASpaceMission"
-          SpriteName="BuildASpaceMission"/>
+          SpriteName="BuildASpaceMission"
+          LeftOptionTextLocalCode="_no"
+          RightOptionTextLocalCode="_yes">
+    </Card>
   </Deck>
   
 </ArrayOfDeck>

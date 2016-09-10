@@ -32,6 +32,8 @@ namespace Assets.Scripts.Controllers
 
         public Slider Stat4Slider;
 
+        public Gradient SliderColorGradient;
+
         public GameController()
         {
             Instance = this;
@@ -80,6 +82,15 @@ namespace Assets.Scripts.Controllers
             Stat2Slider.value = world.Stats[1].Value;
             Stat3Slider.value = world.Stats[2].Value;
             Stat4Slider.value = world.Stats[3].Value;
+
+            Stat1Slider.GetComponentInChildren<Image>().color =
+                SliderColorGradient.Evaluate((float)world.Stats[0].Value / 100);
+            Stat2Slider.GetComponentInChildren<Image>().color =
+                SliderColorGradient.Evaluate((float)world.Stats[1].Value / 100);
+            Stat3Slider.GetComponentInChildren<Image>().color =
+                SliderColorGradient.Evaluate((float)world.Stats[2].Value / 100);
+            Stat4Slider.GetComponentInChildren<Image>().color =
+                SliderColorGradient.Evaluate((float)world.Stats[3].Value / 100);
         }
     }
 }

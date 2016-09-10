@@ -11,6 +11,12 @@ namespace Assets.Scripts.Models
         [XmlAttribute]
         public string DescriptionTextLocalCode { get; set; }
 
+        [XmlAttribute]
+        public bool Expirable { get; set; }
+
+        [XmlAttribute]
+        public int TurnRemaining { get; set; }
+
         public virtual void OnStatChange(string statName, int value)
         {
             throw new NotImplementedException();

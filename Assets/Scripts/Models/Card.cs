@@ -6,7 +6,6 @@ namespace Assets.Scripts.Models
 {
     public class Card
     {
-
         public Card()
         {
             LeftEffects = new List<CardEffect>();

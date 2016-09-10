@@ -9,6 +9,7 @@
     Aggressive Alien Invasion
     Alien Infiltration
     Lazy-Idiocracy
+    CyberMen Convert
   -->
   
   <Apocalypse Name="Impact"
@@ -58,7 +59,7 @@
             CurrentMinOutLocalCode="stat_politic_minout"/>
       <Stat Name="Hope" 
             SpriteName="stat_hope" 
-            Value="60" 
+            Value="40" 
             CurrentMaxOutLocalCode="stat_hope_maxout" 
             CurrentMinOutLocalCode="stat_hope_minout"/>
       <Stat Name="Science"
@@ -68,7 +69,7 @@
             CurrentMinOutLocalCode="stat_science_minout"/>
       <Stat Name="Money"
             SpriteName="stat_money"
-            Value="10" 
+            Value="25" 
             CurrentMaxOutLocalCode="stat_money_maxout" 
             CurrentMinOutLocalCode="stat_money_minout"/>
     </StartupWorld>

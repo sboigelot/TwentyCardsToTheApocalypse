@@ -31,8 +31,8 @@ namespace Assets.Scripts.Models.Effects
         [XmlAttribute("CardEffectType")]
         public string XmlEffectType
         {
-            get { return Enum.GetName(typeof (CardEffectType), EffectType); }
-            set { EffectType = (CardEffectType) Enum.Parse(typeof (CardEffectType), value); }
+            get { return Enum.GetName(typeof(CardEffectType), EffectType); }
+            set { EffectType = (CardEffectType)Enum.Parse(typeof(CardEffectType), value); }
         }
 
         public CardEffect Clone()
@@ -59,6 +59,7 @@ namespace Assets.Scripts.Models.Effects
                     {
                         stat.Value += FunctionParam;
                     }
+
                     break;
 
                 case CardEffectType.PrioritizeCard:

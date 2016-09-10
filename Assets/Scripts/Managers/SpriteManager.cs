@@ -31,6 +31,16 @@ namespace Assets.Scripts.Managers
             string folderPath = Path.Combine(Application.streamingAssetsPath, "Images");
             LoadSpritesFromDirectory(folderPath);
         }
+        
+        public static Sprite Get(string key)
+        {
+            if (!Instance.sprites.ContainsKey(key))
+            {
+                return Instance.notFoundSprite;
+            }
+
+            return Instance.sprites[key];
+        }
 
         private void LoadSpritesFromDirectory(string folderPath)
         {
@@ -66,16 +76,5 @@ namespace Assets.Scripts.Managers
                 sprites[spriteName] = s;
             }
         }
-
-        public static Sprite Get(string key)
-        {
-            if (!Instance.sprites.ContainsKey(key))
-            {
-                return Instance.notFoundSprite;
-            }
-
-            return Instance.sprites[key];
-        }
     }
-
 }

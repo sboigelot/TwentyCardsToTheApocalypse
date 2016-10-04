@@ -14,12 +14,15 @@ namespace Assets.Scripts.Managers
 
         public List<Apocalypse> Apocalypses { get; set; }
 
+        public List<WorldImprovement> Improvements { get; set; }
+        
         public PlayerProfile PlayerTemplate { get; set; }
 
         public void LoadPrototypes()
         {
             Apocalypses = Load<List<Apocalypse>>("Apocalypses.xml");
             Decks = Load<List<Deck>>("Decks.xml");
+            Improvements = Load<List<WorldImprovement>>("Improvements.xml");
             PlayerTemplate = Load<PlayerProfile>("PlayerTemplate.xml");
 
             var allCards = Decks.SelectMany(d => d.Cards).ToList();

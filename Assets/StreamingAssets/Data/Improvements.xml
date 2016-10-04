@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfWorldImprovement>
+  <WorldImprovement Name="ScientistMeeting" 
+                    DescriptionTextLocalCode="impr_ScientistMeeting" 
+                    Expirable="true" 
+                    TurnRemaining="5"/>
+  <WorldImprovement Name="MassiveNuke" 
+                    DescriptionTextLocalCode="impr_MassiveNuke"/>
+  <WorldImprovement Name="SpaceMission" 
+                    DescriptionTextLocalCode="impr_SpaceMission"/>
+</ArrayOfWorldImprovement>

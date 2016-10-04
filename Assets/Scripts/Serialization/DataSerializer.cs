@@ -15,7 +15,7 @@ namespace Assets.Scripts.Serialization
             using (var fileStream = File.Open(fileName, FileMode.CreateNew, FileAccess.ReadWrite))
             {
                 Serialize(fileStream, value);
-                fileStream.Close();
+                //fileStream.Close();
             }
         }
 
@@ -51,7 +51,7 @@ namespace Assets.Scripts.Serialization
             using (var fileStream = File.Open(fileName, FileMode.Open, FileAccess.Read))
             {
                 var data = DeSerialize<T>(fileStream);
-                fileStream.Close();
+                //fileStream.Close();
                 return data;
             }
         }

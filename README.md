@@ -25,7 +25,7 @@ All non-code assets (e.g. art, sound) is licensed under CC BY-NC-SA 3.0
 
 ## Contributing
 
-## Community
+Feel free to fork and submit PR. Try to follow the coding style and run StyleCop.
 
 ## Contact
 
